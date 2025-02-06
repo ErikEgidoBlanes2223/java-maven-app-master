@@ -10,19 +10,17 @@ pipeline {
                 }
             }
         }
-        stage("build jar") {
+        stage("app") {
             steps {
                 script {
-                    echo "building jar"
-                    //gv.buildJar()
+                    gv.buildApp()
                 }
             }
         }
-        stage("build image") {
+        stage("test") {
             steps {
                 script {
-                    echo "building image"
-                    //gv.buildImage()
+                    gv.testApp()
                 }
             }
         }
@@ -30,7 +28,7 @@ pipeline {
             steps {
                 script {
                     echo "deploying"
-                    //gv.deployApp()
+                    gv.deployApp()
                 }
             }
         }
